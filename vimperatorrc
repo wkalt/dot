@@ -1,0 +1,23 @@
+"3.8.1 (created: 2013/11/21 23:49:14)
+
+map <BS> <Nop>
+
+noremap l L
+noremap h H
+noremap gr ggr
+
+noremap <C-h> <C-p>
+noremap <C-l> <C-n>
+
+noremap H <C-p>
+noremap L <C-n>
+noremap an tnews.ycombinator.com<CR>
+noremap ss tportland.craigslist.com<CR>
+noremap sn tnytimes.com<CR>
+noremap sw twashingtonpost.com<CR>
+
+hi Normal -append font-size: 9pt;
+hi Hint::after -append font-size: 9pt;
+
+source! /home/wyatt/.vimperatorrc.local
+" vim: set ft=vimperator:
