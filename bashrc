@@ -124,48 +124,10 @@ if [ "$(id -u)" == "0" ]; then
     PS1="\[\e[1;33m\][\u@\h \W]\`ruby -e \"print (%x{git branch 2> /dev/null}.match(/^\*.*/).to_s || '').gsub(/^\* (.+)$/, '(\1) ')\"\`$\[\e[0m\] "
 fi
 
-function proxy_on() {
-    export no_proxy="localhost,127.0.0.1,localhost.localdomain,desktop"
-
-    if (( $# > 0 )); then
-        valid=$(echo $@ | sed -n 's/\([0-9]\{1,3\}.\)\{4\}:\([0-9]\+\)/&/p')
-        if [[ $valid != $@ ]]; then
-            >&2 echo "Invalid address"
-            return 1
-        fi
-
-        export http_proxy="http://$1/"
-        export https_proxy=$http_proxy
-        export ftp_proxy=$http_proxy
-        export rsync_proxy=$http_proxy
-        echo "Proxy environment variable set."
-        return 0
-    fi
-
-    echo -n "username: "; read username
-    if [[ $username != "" ]]; then
-        echo -n "password: "
-        read -es password
-        local pre="$username:$password@"
-    fi
-
-    echo -n "server: "; read server
-    echo -n "port: "; read port
-    export http_proxy="http://$pre$server:$port/"
-    export https_proxy=$http_proxy
-    export ftp_proxy=$http_proxy
-    export rsync_proxy=$http_proxy
-}
-
-function proxy_off(){
-    unset http_proxy
-    unset https_proxy
-    unset ftp_proxy
-    unset rsync_proxy
-    echo -e "Proxy environment variable removed."
-}
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+source "$HOME/.profile"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-export PATH=/home/wyatt/.rvm/gems/ruby-1.9.3-p547/bin:/home/wyatt/.rvm/gems/ruby-1.9.3-p547@global/bin:/home/wyatt/.rvm/rubies/ruby-1.9.3-p547/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/home/wyatt/.rvm/bin:/home/wyatt/scripts
+source /Users/wyatt/.rvm/scripts/rvm
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
+PATH=/Users/wyatt/.rvm/gems/ruby-2.1.2/bin:/usr/local/bin:/Users/wyatt/.rvm/gems/ruby-1.9.3-p547@puppetdb/bin:/Users/wyatt/.rvm/gems/ruby-1.9.3-p547@global/bin:/Users/wyatt/.rvm/rubies/ruby-1.9.3-p547/bin:/Users/wyatt/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/MacGPG2/bin:/Applications/Postgres.app/Contents/Versions/9.3/bin:/Users/wyatt/scripts
+export LOAD_PATH=/Users/wyatt/facts

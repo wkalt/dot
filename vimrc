@@ -38,6 +38,7 @@ Bundle 'tpope/vim-classpath'
 Bundle 'tpope/vim-fugitive'
 Bundle "paredit.vim"
 Bundle 'ciaranm/inkpot'
+Bundle "fatih/vim-go"
 
 filetype plugin indent on
 "
@@ -54,6 +55,8 @@ set scrolloff=5
 let g:paredit_leader = '\'
 let g:paredit_shortmaps = 1
 let g:paredit_electric_return = 1
+let paredit_electric_return = 1
+command! Ptoggle call PareditToggle()
 
 let maplocalleader = ';'
 "
@@ -62,6 +65,7 @@ let maplocalleader = ';'
  autocmd Filetype python set tabstop=4|set shiftwidth=4|set expandtab
  autocmd FileType python set makeprg=sage\ -b\ &&\ sage\ -t\ %
 " "
+
 
 "" disable R underscore hotkey
 let vimrplugin_assign = 0
@@ -81,6 +85,9 @@ nnoremap z<Up> <C-w>k
 " buffer switching
 nnoremap <Right> :bn<CR>
 nnoremap <Left> :bp<CR>
+nnoremap zl :ls<CR>
+
+
 
 " 
 nnoremap j gj
@@ -98,9 +105,9 @@ set colorcolumn=80
 highlight ColorColumn ctermbg=233
 " 
 set ls=2
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set shiftround
 set expandtab
 set smartcase
@@ -117,6 +124,8 @@ set undodir=~/.vim/undo
 set splitbelow
 set splitright
 
+"" quadruple buffer buster (TM) wyatt alt
+nnoremap z4 :sp<CR>:bn<CR>:vs<CR>:bn<CR><C-w>k:vs<CR>:3bn<CR><C-w>h
 " 
 "
 " R support for ctags
@@ -147,6 +156,10 @@ vmap y y']
 
 nnoremap <C-y> :CtrlPBuffer<CR>
 colorscheme inkpot
+let g:netrw_browsex_viewer= "firefox"
+
+"Ruby settings
+autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 expandtab number
 
 "" call flake8 on python save
 autocmd BufWritePost *.py call Flake8()
