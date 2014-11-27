@@ -165,7 +165,4 @@ function proxy_off(){
     echo -e "Proxy environment variable removed."
 }
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-export PATH=/home/wyatt/.rvm/gems/ruby-1.9.3-p547/bin:/home/wyatt/.rvm/gems/ruby-1.9.3-p547@global/bin:/home/wyatt/.rvm/rubies/ruby-1.9.3-p547/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/home/wyatt/.rvm/bin:/home/wyatt/scripts
+export PATH="$PATH:$HOME/.gem/ruby/2.1.0/bin" # Add RVM to PATH for scripting
