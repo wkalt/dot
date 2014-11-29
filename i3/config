@@ -115,9 +115,12 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # sound keys
-bindsym XF86AudioRaiseVolume exec amixer -c l set Master 5+
-bindsym XF86AudioLowerVolume exec amixer -c l set Master 5-
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 4%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 4%- unmute
 bindsym XF86AudioMute exec amixer -c l set Master toggle
+
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
