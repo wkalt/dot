@@ -38,6 +38,7 @@ Bundle 'tpope/vim-classpath'
 Bundle 'tpope/vim-fugitive'
 Bundle "paredit.vim"
 Bundle 'ciaranm/inkpot'
+Bundle 'lervag/vim-latex'
 
 filetype plugin indent on
 "
@@ -53,7 +54,7 @@ set scrolloff=5
 " paredit settings
 let g:paredit_leader = '\'
 let g:paredit_shortmaps = 1
-let g:paredit_electric_return = 1
+let g:paredit_electric_return = 2
 
 let maplocalleader = ';'
 "
@@ -95,7 +96,7 @@ set wildmenu
 set tw=79
 set fo-=t
 set colorcolumn=80
-highlight ColorColumn ctermbg=233
+highlight ColorColumn ctermbg=232
 " 
 set ls=2
 set tabstop=2
