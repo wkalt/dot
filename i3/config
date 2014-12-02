@@ -118,8 +118,8 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+Tab workspace next
 
 # sound keys
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 4%+ unmute
-bindsym XF86AudioLowerVolume exec amixer -q set Master 4%- unmute
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 3%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 3%- unmute
 bindsym XF86AudioMute exec amixer -c l set Master toggle
 
 #brightness
