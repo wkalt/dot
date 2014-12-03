@@ -146,7 +146,7 @@ cmap w!! w !sudo tee %
 vmap y y']
 
 nnoremap <C-y> :CtrlPBuffer<CR>
-colorscheme inkpot
+"colorscheme inkpot
 
 "" call flake8 on python save
 autocmd BufWritePost *.py call Flake8()

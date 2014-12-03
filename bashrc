@@ -114,7 +114,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-PS1="[\w] \`ruby -e \"print (%x{git branch 2> /dev/null}.match(/^\*.*/).to_s || '').gsub(/^\* (.+)$/, '(\1) ')\"\`$ "
+PS1="\[\e[38;5;163m\][\u@\h \W]\`ruby -e \"print (%x{git branch 2> /dev/null}.match(/^\*.*/).to_s || '').gsub(/^\* (.+)$/, '(\1) ')\"\`$\[\e[0m\] "
 
 if [ -n "$SSH_CONNECTION" ]; then
     PS1="\[\e[1;31m\][\u@\h \W]\`ruby -e \"print (%x{git branch 2> /dev/null}.match(/^\*.*/).to_s || '').gsub(/^\* (.+)$/, '(\1) ')\"\`$\[\e[0m\] "
@@ -164,8 +164,3 @@ function proxy_off(){
     unset rsync_proxy
     echo -e "Proxy environment variable removed."
 }
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-export PATH=/home/wyatt/.rvm/gems/ruby-1.9.3-p547/bin:/home/wyatt/.rvm/gems/ruby-1.9.3-p547@global/bin:/home/wyatt/.rvm/rubies/ruby-1.9.3-p547/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/home/wyatt/.rvm/bin:/home/wyatt/scripts
