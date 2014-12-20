@@ -166,3 +166,4 @@ function proxy_off(){
 }
 
 export PATH="$PATH:$HOME/.gem/ruby/2.1.0/bin" # Add RVM to PATH for scripting
+export PATH="$PATH:/home/wyatt/scripts"
