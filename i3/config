@@ -116,6 +116,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 # cycle workspaces
 bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
 
 # sound keys
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 3%+ unmute
