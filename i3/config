@@ -19,7 +19,7 @@ set $mod Mod1
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
-font pango:Droid Sans 10 
+font pango:Inconsolata 9 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -173,7 +173,7 @@ bar {
     position top
     status_command i3status
     tray_output LVDS
-    font pango: Open Sans 11 
+    font pango: Inconsolata 9
     colors{
         background #232323
         statusline #DCDCDC

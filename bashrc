@@ -1,6 +1,6 @@
 set -o vi
 
-export TERM="xterm-256color"
+export TERM="screen-256color"
 export EDITOR="vim"
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
@@ -87,6 +87,8 @@ else
     export CLICOLOR=1
     export LSCOLORS=GxFxCxDxBxegedabagaced
 fi
+
+eval $(dircolors /usr/share/dircolors/dircolors.ansi-universal)
 
 # some more ls aliases
 alias ll='ls -alF'
