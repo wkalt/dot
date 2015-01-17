@@ -39,6 +39,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle "paredit.vim"
 Bundle 'ciaranm/inkpot'
 Bundle 'lervag/vim-latex'
+Bundle 'altercation/vim-colors-solarized'
 
 filetype plugin indent on
 "
@@ -147,7 +148,9 @@ cmap w!! w !sudo tee %
 vmap y y']
 
 nnoremap <C-y> :CtrlPBuffer<CR>
-colorscheme inkpot
+set t_Co=256
+set background=dark
+colorscheme solarized
 
 "" call flake8 on python save
 autocmd BufWritePost *.py call Flake8()

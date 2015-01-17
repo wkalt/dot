@@ -1,6 +1,6 @@
 set -o vi
 
-export TERM="xterm-256color"
+export TERM="screen-256color"
 export EDITOR="vim"
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
@@ -88,6 +88,8 @@ else
     export LSCOLORS=GxFxCxDxBxegedabagaced
 fi
 
+eval $(dircolors /usr/share/dircolors/dircolors.ansi-universal)
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -165,7 +167,6 @@ function proxy_off(){
     echo -e "Proxy environment variable removed."
 }
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-export PATH=/home/wyatt/.rvm/gems/ruby-1.9.3-p547/bin:/home/wyatt/.rvm/gems/ruby-1.9.3-p547@global/bin:/home/wyatt/.rvm/rubies/ruby-1.9.3-p547/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/home/wyatt/.rvm/bin:/home/wyatt/scripts
+export PATH=/home/wyatt/.gem/ruby/2.2.0/bin:$PATH
+export PATH="$HOME/.rvm/bin:$PATH"
+source /home/wyatt/.rvm/scripts/rvm
