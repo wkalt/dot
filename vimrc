@@ -143,6 +143,8 @@ nmap <F7> :NERDTreeToggle<CR>
 " write the current file with sudo
 cmap w!! w !sudo tee %
 
+cmap Wq wq
+
 "
 " move cursor below target block after yanking in visual mode
 vmap y y']
@@ -150,7 +152,7 @@ vmap y y']
 nnoremap <C-y> :CtrlPBuffer<CR>
 set t_Co=256
 set background=dark
-colorscheme solarized
+colorscheme inkpot
 
 "" call flake8 on python save
 autocmd BufWritePost *.py call Flake8()
