@@ -39,10 +39,15 @@ Bundle 'tpope/vim-fugitive'
 Bundle "paredit.vim"
 Bundle 'ciaranm/inkpot'
 Bundle 'lervag/vim-latex'
-Bundle 'altercation/vim-colors-solarized'
+Bundle 'solars/github-vim'
 
 filetype plugin indent on
+
 "
+"
+"ctrlp ignore settings
+":
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,vendor
 
 nmap BB :BundleInstall<CR>
 nmap BC :BundleClean<CR>
