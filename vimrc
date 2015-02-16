@@ -75,7 +75,7 @@ let maplocalleader = ';'
 
 "" disable R underscore hotkey
 let vimrplugin_assign = 0
- 
+
 " window switching
 imap ii <C-[>
 nnoremap <C-j> <C-w>j
@@ -95,21 +95,21 @@ nnoremap zl :ls<CR>
 
 
 
-" 
+"
 nnoremap j gj
 nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 "
- 
+
 set wildmenu
-" 
+"
 "line width
 set tw=79
 set fo-=t
 set colorcolumn=80
-highlight ColorColumn ctermbg=233
-" 
+highlight ColorColumn ctermbg=232
+"
 set ls=2
 set tabstop=4
 set softtabstop=4
@@ -130,9 +130,6 @@ set undodir=~/.vim/undo
 set splitbelow
 set splitright
 
-"" quadruple buffer buster (TM) wyatt alt
-nnoremap z4 :sp<CR>:bn<CR>:vs<CR>:bn<CR><C-w>k:vs<CR>:3bn<CR><C-w>h
-" 
 "
 " R support for ctags
 let g:tagbar_type_r = {
@@ -156,6 +153,15 @@ nmap <F7> :NERDTreeToggle<CR>
 " write the current file with sudo
 cmap w!! w !sudo tee %
 
+cmap Wq wq
+
+fun! <SID>StripTrailingWhitespaces()
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  call cursor(l, c)
+endfun
+
 "
 " move cursor below target block after yanking in visual mode
 vmap y y']
@@ -173,4 +179,4 @@ au BufNewFile,BufRead *.html,*.htm,*.shtml,*.stm set ft=jinja
 au BufNewFile,BufRead *.jl set ft=julia
 au BufNewFile,BufRead *.R set ft=r
 au BufNewFile,BufRead *.pp set ft=puppet
-autocmd BufWritePre *.py :%s/\s\+$//e
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
