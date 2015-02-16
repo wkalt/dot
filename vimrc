@@ -25,7 +25,6 @@ Bundle "garbas/vim-snipmate"
 Bundle "honza/vim-snippets"
 Bundle 'JuliaLang/julia-vim'
 Bundle 'kien/ctrlp.vim'
-Bundle 'majutsushi/tagbar'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'pangloss/vim-javascript'
 Bundle 'lepture/vim-jinja'
@@ -43,10 +42,7 @@ Bundle 'solars/github-vim'
 
 filetype plugin indent on
 
-"
-"
 "ctrlp ignore settings
-":
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,vendor
 
 nmap BB :BundleInstall<CR>
@@ -63,12 +59,11 @@ let g:paredit_shortmaps = 1
 let g:paredit_electric_return = 2
 
 let maplocalleader = ';'
-"
+
 " "Sage settings (from Franco Saliola)
- autocmd BufRead,BufNewFile *.sage,*.pyx,*.spyx set filetype=python
- autocmd Filetype python set tabstop=4|set shiftwidth=4|set expandtab
- autocmd FileType python set makeprg=sage\ -b\ &&\ sage\ -t\ %
-" "
+autocmd BufRead,BufNewFile *.sage,*.pyx,*.spyx set filetype=python
+autocmd Filetype python set tabstop=4|set shiftwidth=4|set expandtab
+autocmd FileType python set makeprg=sage\ -b\ &&\ sage\ -t\ %
 
 "" disable R underscore hotkey
 let vimrplugin_assign = 0
@@ -80,30 +75,22 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-nnoremap z<Left> <C-w>h
-nnoremap z<Right> <C-w>l
-nnoremap z<Down> <C-w>j
-nnoremap z<Up> <C-w>k
-
 " buffer switching
 nnoremap <Right> :bn<CR>
 nnoremap <Left> :bp<CR>
 
-"
-nnoremap j gj
-nnoremap k gk
+" don't respect wrapped lines
 vnoremap j gj
 vnoremap k gk
-"
 
 set wildmenu
-"
+
 "line width
 set tw=79
 set fo-=t
 set colorcolumn=80
 highlight ColorColumn ctermbg=232
-"
+
 set ls=2
 set tabstop=2
 set softtabstop=2
@@ -124,8 +111,6 @@ set undodir=~/.vim/undo
 set splitbelow
 set splitright
 
-"
-"
 " R support for ctags
 let g:tagbar_type_r = {
     \ 'ctagstype' : 'r',
@@ -138,9 +123,6 @@ let g:tagbar_type_r = {
 
 " " paste mode toggle
 set pastetoggle=<F10>
-
-" tagbar toggle
-nmap <F8> :TagbarToggle<CR>
 
 " NERDTree toggle
 nmap <F7> :NERDTreeToggle<CR>
@@ -157,7 +139,6 @@ fun! <SID>StripTrailingWhitespaces()
   call cursor(l, c)
 endfun
 
-"
 " move cursor below target block after yanking in visual mode
 vmap y y']
 
