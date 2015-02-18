@@ -155,6 +155,10 @@ let g:netrw_browsex_viewer= "firefox"
 "Ruby settings
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 expandtab number
 
+" vim clojure indent settings for emacs compatibility
+let g:clojure_align_multiline_strings = 1
+let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^assoc']
+
 "" call flake8 on python save
 autocmd BufWritePost *.py call Flake8()
 au BufNewFile,BufRead *.html,*.htm,*.shtml,*.stm set ft=jinja
