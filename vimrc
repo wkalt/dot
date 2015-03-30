@@ -5,8 +5,6 @@ set backspace=2
 set grepprg=grep\ -nH\ $*
 
 filetype off
-" syntax
-" new
 syntax on
 
 "" vundle related
@@ -48,11 +46,6 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,vendor
 nmap BB :BundleInstall<CR>
 nmap BC :BundleClean<CR>
 
-set number
-set hlsearch
-set incsearch
-set more
-set scrolloff=5
 " paredit settings
 let g:paredit_leader = '\'
 let g:paredit_shortmaps = 1
@@ -65,11 +58,9 @@ autocmd BufRead,BufNewFile *.sage,*.pyx,*.spyx set filetype=python
 autocmd Filetype python set tabstop=4|set shiftwidth=4|set expandtab
 autocmd FileType python set makeprg=sage\ -b\ &&\ sage\ -t\ %
 
-"" disable R underscore hotkey
-let vimrplugin_assign = 0
+imap ii <C-[>
 
 " window switching
-imap ii <C-[>
 nnoremap <C-j> <C-w>j
 nnoremap <C-h> <C-w>h
 nnoremap <C-k> <C-w>k
@@ -102,6 +93,12 @@ set showcmd
 set autoindent
 set spelllang=en_us
 set encoding=utf-8
+set ignorecase
+set number
+set hlsearch
+set incsearch
+set more
+set scrolloff=5
 
 " persistant undo
 set undofile
@@ -110,6 +107,9 @@ set undodir=~/.vim/undo
 "" open new splits below / to right of current split
 set splitbelow
 set splitright
+
+"" disable R underscore hotkey
+let vimrplugin_assign = 0
 
 " R support for ctags
 let g:tagbar_type_r = {
@@ -129,7 +129,6 @@ nmap <F7> :NERDTreeToggle<CR>
 
 " write the current file with sudo
 cmap w!! w !sudo tee %
-
 cmap Wq wq
 
 fun! <SID>StripTrailingWhitespaces()
@@ -152,9 +151,9 @@ let g:clojure_align_multiline_strings = 1
 let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^assoc']
 
 "" call flake8 on python save
-autocmd BufWritePost *.py call Flake8()
+""autocmd BufWritePost *.py call Flake8()
 au BufNewFile,BufRead *.html,*.htm,*.shtml,*.stm set ft=jinja
 au BufNewFile,BufRead *.jl set ft=julia
 au BufNewFile,BufRead *.R set ft=r
 au BufNewFile,BufRead *.pp set ft=puppet
-autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.clj,*.rb :call <SID>StripTrailingWhitespaces()
