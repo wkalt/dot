@@ -121,7 +121,7 @@ bindsym $mod+Shift+Tab workspace prev
 # sound keys
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 3%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 3%- unmute
-bindsym XF86AudioMute exec amixer -c l set Master toggle
+bindsym XF86AudioMute exec amixer set Master toggle
 
 #brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10

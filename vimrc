@@ -148,7 +148,7 @@ set background=light
 "colorscheme inkpot
 
 "" call flake8 on python save
-autocmd BufWritePost *.py call Flake8()
+"" autocmd BufWritePost *.py call Flake8()
 au BufNewFile,BufRead *.html,*.htm,*.shtml,*.stm set ft=jinja
 au BufNewFile,BufRead *.jl set ft=julia
 au BufNewFile,BufRead *.R set ft=r
