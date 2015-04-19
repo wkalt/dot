@@ -128,7 +128,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 
 #screen lock
-bindsym XF86Tools exec dm-tool lock
+bindsym XF86Tools exec i3lock
 
 # printscreen
 bindsym Print exec scrot -q 100 -e 'mv $f ~/Pictures'
