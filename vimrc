@@ -145,7 +145,7 @@ vmap y y']
 nnoremap <C-y> :CtrlPBuffer<CR>
 set t_Co=256
 set background=light
-"colorscheme inkpot
+colorscheme inkpot
 
 "" call flake8 on python save
 "" autocmd BufWritePost *.py call Flake8()
