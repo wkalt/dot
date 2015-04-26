@@ -156,4 +156,4 @@ au BufNewFile,BufRead *.html,*.htm,*.shtml,*.stm set ft=jinja
 au BufNewFile,BufRead *.jl set ft=julia
 au BufNewFile,BufRead *.R set ft=r
 au BufNewFile,BufRead *.pp set ft=puppet
-autocmd BufWritePre *.clj,*.rb :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.clj,*.rb,*.py :call <SID>StripTrailingWhitespaces()
