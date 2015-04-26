@@ -16,7 +16,6 @@ Bundle 'gmarik/vundle'
 Bundle 'Vim-R-plugin'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-flake8'
-Bundle 'scrooloose/nerdtree'
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
@@ -123,9 +122,6 @@ let g:tagbar_type_r = {
 
 " " paste mode toggle
 set pastetoggle=<F10>
-
-" NERDTree toggle
-nmap <F7> :NERDTreeToggle<CR>
 
 " write the current file with sudo
 cmap w!! w !sudo tee %
