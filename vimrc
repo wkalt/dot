@@ -70,8 +70,8 @@ nnoremap <Right> :bn<CR>
 nnoremap <Left> :bp<CR>
 
 " don't respect wrapped lines
-vnoremap j gj
-vnoremap k gk
+nnoremap j gj
+nnoremap k gk
 
 set wildmenu
 
