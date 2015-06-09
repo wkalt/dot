@@ -14,6 +14,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'Vim-R-plugin'
+Bundle 'vim-scripts/HTML-AutoCloseTag'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-flake8'
 Bundle "MarcWeber/vim-addon-mw-utils"
@@ -36,6 +37,8 @@ Bundle "paredit.vim"
 Bundle 'ciaranm/inkpot'
 Bundle 'lervag/vim-latex'
 Bundle 'solars/github-vim'
+Bundle 'derekwyatt/vim-scala'
+Bundle 'altercation/vim-colors-solarized'
 
 filetype plugin indent on
 
@@ -139,8 +142,10 @@ vmap y y']
 
 nnoremap <C-y> :CtrlPBuffer<CR>
 set t_Co=256
-set background=dark
-colorscheme inkpot
+ set background=dark
+ colorscheme inkpot
+" set background=light
+" colorscheme solarized
 
 " vim clojure indent settings for emacs compatibility
 let g:clojure_align_multiline_strings = 1
@@ -153,4 +158,5 @@ au BufNewFile,BufRead *.html,*.htm,*.shtml,*.stm set ft=jinja
 au BufNewFile,BufRead *.jl set ft=julia
 au BufNewFile,BufRead *.R set ft=r
 au BufNewFile,BufRead *.pp set ft=puppet
+au BufNewFile,BufRead *.scala set ft=scala
 autocmd BufWritePre *.clj,*.rb,*.py :call <SID>StripTrailingWhitespaces()
