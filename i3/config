@@ -119,9 +119,9 @@ bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
 # sound keys
-bindsym XF86AudioRaiseVolume exec amixer -c 3 -q set Headphone 2%+ unmute
-bindsym XF86AudioLowerVolume exec amixer -c 3 -q set Headphone 2%- unmute
-bindsym XF86AudioMute exec amixer -c 3 set Headphone toggle
+bindsym XF86AudioRaiseVolume exec amixer -c 0 -q set Headphone 2%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -c 0 -q set Headphone 2%- unmute
+bindsym XF86AudioMute exec amixer -c 0 set Headphone toggle
 
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
