@@ -29,7 +29,6 @@ Bundle 'lepture/vim-jinja'
 Bundle 'loremipsum'
 Bundle 'ervandew/supertab'
 Bundle 'rodjek/vim-puppet'
-Bundle 'guns/vim-clojure-static'
 Bundle 'tpope/vim-fireplace'
 Bundle 'tpope/vim-classpath'
 Bundle 'tpope/vim-fugitive'
@@ -148,7 +147,7 @@ colorscheme inkpot
 
 " vim clojure indent settings for emacs compatibility
 let g:clojure_align_multiline_strings = 1
-let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^assoc']
+let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let']
 
 "" call flake8 on python save
 autocmd BufWritePost *.py call Flake8()
