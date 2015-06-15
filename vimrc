@@ -71,8 +71,8 @@ nnoremap <Right> :bn<CR>
 nnoremap <Left> :bp<CR>
 
 " don't respect wrapped lines
-vnoremap j gj
-vnoremap k gk
+nnoremap j gj
+nnoremap k gk
 
 set wildmenu
 
@@ -147,8 +147,8 @@ set background=light
 colorscheme inkpot
 
 "" call flake8 on python save
-""autocmd BufWritePost *.py call Flake8()
-au BufNewFile,BufRead *.html,*.htm,*.shtml,*.stm set ft=jinja
+autocmd BufWritePost *.py call Flake8()
+"au BufNewFile,BufRead *.html,*.htm,*.shtml,*.stm set ft=jinja
 au BufNewFile,BufRead *.jl set ft=julia
 au BufNewFile,BufRead *.R set ft=r
 au BufNewFile,BufRead *.pp set ft=puppet
