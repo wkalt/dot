@@ -158,4 +158,5 @@ au BufNewFile,BufRead *.jl set ft=julia
 au BufNewFile,BufRead *.R set ft=r
 au BufNewFile,BufRead *.pp set ft=puppet
 au BufNewFile,BufRead *.scala set ft=scala
+au BufRead,BufNewFile *.md,*.markdown,*.tex setlocal fo+=t
 autocmd BufWritePre *.clj,*.rb,*.py :call <SID>StripTrailingWhitespaces()
