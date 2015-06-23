@@ -44,8 +44,8 @@ filetype plugin indent on
 "ctrlp ignore settings
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,vendor
 
-nmap BB :BundleInstall<CR>
-nmap BC :BundleClean<CR>
+nmap BB :BundleInstall<CR><CR>
+nmap BC :BundleClean<CR><CR>
 
 " paredit settings
 let g:paredit_leader = '\'
