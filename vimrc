@@ -126,7 +126,7 @@ let g:tagbar_type_r = {
 set pastetoggle=<F10>
 
 " write the current file with sudo
-cmap w!! w !sudo tee %
+cmap w!! w !sudo tee > /dev/null %
 cmap Wq wq
 
 fun! <SID>StripTrailingWhitespaces()
