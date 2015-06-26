@@ -4,6 +4,7 @@ export TERM="screen-256color"
 export EDITOR="vim"
 export BROWSER="firefox"
 export FACTERLIB=~/facter
+export COLUMNS
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
