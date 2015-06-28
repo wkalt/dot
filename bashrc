@@ -132,7 +132,7 @@ function proxy_off(){
 }
 
 export PATH=/home/wyatt/scripts:$PATH
-export PATH=/home/wyatt/.gem/ruby/2.2.0/bin:$PATH
-export PATH="$HOME/.rvm/bin:$PATH"
+export PATH=$PATH:/home/wyatt/.gem/ruby/2.2.0/bin
+export PATH=$PATH:$HOME/.rvm/bin
 
 source /home/wyatt/.rvm/scripts/rvm
