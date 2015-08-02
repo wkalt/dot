@@ -142,8 +142,9 @@ vmap y y']
 
 nnoremap <C-y> :CtrlPBuffer<CR>
 set t_Co=256
-set background=light
+set background=dark
 colorscheme inkpot
+"colorscheme morning
 
 " vim clojure indent settings for emacs compatibility
 let g:clojure_align_multiline_strings = 1

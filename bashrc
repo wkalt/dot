@@ -134,5 +134,6 @@ export PATH="$PATH:$HOME/.gem/ruby/2.1.0/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:/home/wyatt/scripts"
 
 export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
+export PATH="$HOME/bin:$PATH" # Add RVM to PATH for scripting
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
