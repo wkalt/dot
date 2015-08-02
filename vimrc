@@ -38,6 +38,9 @@ Bundle 'lervag/vim-latex'
 Bundle 'solars/github-vim'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'sickill/vim-sunburst'
+Bundle 'morhetz/gruvbox'
+Bundle 'hynek/vim-python-pep8-indent'
 
 filetype plugin indent on
 
@@ -141,17 +144,18 @@ vmap y y']
 
 nnoremap <C-y> :CtrlPBuffer<CR>
 set t_Co=256
- set background=dark
- colorscheme inkpot
-" set background=light
-" colorscheme solarized
+set background=dark
+colorscheme inkpot
+"set background=light
+"colorscheme morning
+"colorscheme solarized
 
 " vim clojure indent settings for emacs compatibility
 let g:clojure_align_multiline_strings = 1
 let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let']
 
 "" call flake8 on python save
-""autocmd BufWritePost *.py call Flake8()
+autocmd BufWritePost *.py call Flake8()
 
 "" fugitive bindings
 nnoremap <space>ga :Git add %:p<CR><CR>
