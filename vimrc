@@ -146,7 +146,7 @@ nnoremap <C-y> :CtrlPBuffer<CR>
 set t_Co=256
 set background=dark
 colorscheme inkpot
-"set background=light
+set background=light
 "colorscheme morning
 "colorscheme solarized
 
