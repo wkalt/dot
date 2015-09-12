@@ -4,6 +4,7 @@ export TERM="screen-256color"
 export EDITOR="vim"
 export BROWSER="firefox"
 export FACTERLIB=~/facter
+export ANSIBLE_INVENTORY=~/ansible
 export COLUMNS
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
@@ -131,8 +132,8 @@ function proxy_off(){
     echo -e "Proxy environment variable removed."
 }
 
-export PATH=/home/wyatt/scripts:$PATH
 export PATH=$PATH:/home/wyatt/.gem/ruby/2.2.0/bin
 export PATH=$PATH:$HOME/.rvm/bin
 
 source /home/wyatt/.rvm/scripts/rvm
+export PATH=/home/wyatt/scripts:$PATH:/home/wyatt/bin

@@ -41,6 +41,8 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'sickill/vim-sunburst'
 Bundle 'morhetz/gruvbox'
 Bundle 'hynek/vim-python-pep8-indent'
+Bundle 'chase/vim-ansible-yaml'
+
 
 filetype plugin indent on
 
@@ -49,6 +51,13 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,vendor
 
 nmap BB :BundleInstall<CR><CR>
 nmap BC :BundleClean<CR><CR>
+
+" experimental python stuff
+imap <silent> <leader>l <Esc>Vy<C-w><C-w>p<Esc><C-w><C-w>
+nmap <silent> <leader>l Vy<C-w><C-w>p<C-w><C-w>
+vmap <silent> <leader>l y<C-w><C-w>p<C-w><C-w>
+imap <silent> <leader>n <Esc><C-w><S-w>']0j
+nmap <silent> <leader>n <C-w><S-w>']0j
 
 " paredit settings
 let g:paredit_leader = '\'
@@ -146,8 +155,8 @@ nnoremap <C-y> :CtrlPBuffer<CR>
 set t_Co=256
 set background=dark
 colorscheme inkpot
-set background=light
-"colorscheme morning
+" set background=light
+" colorscheme inkpot
 "colorscheme solarized
 
 " vim clojure indent settings for emacs compatibility

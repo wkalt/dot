@@ -162,12 +162,22 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 
+#bar {
+#    position top
+#    status_command i3status
+#    tray_output LVDS
+#    font pango: Inconsolata 9
+#    colors{
+#        background #232323
+#        statusline #DCDCDC
+#    }
+#}
+#
 bar {
-    position top
-    status_command i3status
-    tray_output LVDS
-    font pango: Inconsolata 9
-    colors{
+  position top
+  font pango: Inconsolata 9
+  status_command $HOME/scripts/conky-i3bar
+  colors{
         background #232323
         statusline #DCDCDC
     }
