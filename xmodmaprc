@@ -10,3 +10,5 @@ keycode 174 = XF86AudioLowerVolume
 
 keycode 101 = XF86MonBrightnessDown
 keycode 212 = XF86MonBrightnessUp
+
+keycode 204 = XF86Eject

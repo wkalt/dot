@@ -19,7 +19,7 @@ set $mod Mod4
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
-font pango:Droid Sans 10 
+font pango:Inconsolata 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -114,10 +114,14 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
+# cycle workspaces
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
+
 # sound keys
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 4%+ unmute
-bindsym XF86AudioLowerVolume exec amixer -q set Master 4%- unmute
-bindsym XF86AudioMute exec amixer -c l set Master toggle
+bindsym XF86AudioRaiseVolume exec amixer -c 3 -q set Headphone 2%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -c 3 -q set Headphone 2%- unmute
+bindsym XF86AudioMute exec amixer -c 3 set Headphone toggle
 
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
@@ -158,12 +162,22 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 
+#bar {
+#    position top
+#    status_command i3status
+#    tray_output LVDS
+#    font pango: Inconsolata 9
+#    colors{
+#        background #232323
+#        statusline #DCDCDC
+#    }
+#}
+#
 bar {
-    position top
-    status_command i3status
-    tray_output LVDS
-    font pango: Open Sans 9 
-    colors{
+  position top
+  font pango: Inconsolata 9
+  status_command $HOME/scripts/conky-i3bar
+  colors{
         background #232323
         statusline #DCDCDC
     }
