@@ -2,28 +2,14 @@
 
 map <BS> <Nop>
 
-noremap l L
-noremap h H
-noremap gr ggr
-
 noremap <C-h> <C-p>
 noremap <C-l> <C-n>
 
-noremap H <C-p>
-noremap L <C-n>
-qmark h news.ycombinator.com
-qmark r reddit.com
-qmark s portland.craigslist.org
-qmark n nytimes.com
-qmark w washingtonpost.com
-qmark g gmail.com
-qmark j https://tickets.puppetlabs.com/secure/RapidBoard.jspa?rapidView=248
 noremap an tnews.ycombinator.com<CR>
 noremap ar treddit.com<CR>
 noremap ss tportland.craigslist.com<CR>
 noremap sn tnytimes.com<CR>
 noremap sw twashingtonpost.com<CR>
-noremap gm tgmail.com<CR>
 
 set hintchars=asdfghklieow
 
