@@ -52,6 +52,9 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,vendor
 nmap BB :BundleInstall<CR><CR>
 nmap BC :BundleClean<CR><CR>
 
+"fireplace eval
+nmap <Tab> :%Eval<CR>
+
 " paredit settings
 let g:paredit_leader = '\'
 let g:paredit_shortmaps = 1
@@ -134,6 +137,9 @@ set pastetoggle=<F10>
 cmap w!! w !sudo tee > /dev/null %
 cmap Wq wq
 
+"
+
+
 fun! <SID>StripTrailingWhitespaces()
   let l = line(".")
   let c = col(".")
@@ -172,6 +178,9 @@ nnoremap <space>gb :Git branch<Space>
 nnoremap <space>go :Git checkout<Space>
 nnoremap <space>gps :Dispatch! git push<CR>
 nnoremap <space>gpl :Dispatch! git pull<CR>
+
+"" indent function args in C++
+set cino+=(0
 
 au BufNewFile,BufRead *.html,*.htm,*.shtml,*.stm set ft=jinja
 au BufNewFile,BufRead *.jl set ft=julia
