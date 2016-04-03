@@ -37,8 +37,6 @@ Bundle 'ciaranm/inkpot'
 Bundle 'lervag/vim-latex'
 Bundle 'solars/github-vim'
 Bundle 'derekwyatt/vim-scala'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'sickill/vim-sunburst'
 Bundle 'morhetz/gruvbox'
 Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'chase/vim-ansible-yaml'
@@ -130,16 +128,14 @@ let g:tagbar_type_r = {
     \ ]
     \ }
 
-" " paste mode toggle
+"" paste mode toggle
 set pastetoggle=<F10>
 
 " write the current file with sudo
 cmap w!! w !sudo tee > /dev/null %
 cmap Wq wq
 
-"
-
-
+" strip trailing whitespace fn
 fun! <SID>StripTrailingWhitespaces()
   let l = line(".")
   let c = col(".")
@@ -161,23 +157,6 @@ let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let']
 
 "" call flake8 on python save
 autocmd BufWritePost *.py call Flake8()
-
-"" fugitive bindings
-nnoremap <space>ga :Git add %:p<CR><CR>
-nnoremap <space>gs :Gstatus<CR>
-nnoremap <space>gc :Gcommit -v -q<CR>
-nnoremap <space>gt :Gcommit -v -q %:p<CR>
-nnoremap <space>gd :Gdiff<CR>
-nnoremap <space>ge :Gedit<CR>
-nnoremap <space>gr :Gread<CR>
-nnoremap <space>gw :Gwrite<CR><CR>
-nnoremap <space>gl :silent! Glog<CR>:bot copen<CR>
-nnoremap <space>gp :Ggrep<Space>
-nnoremap <space>gm :Gmove<Space>
-nnoremap <space>gb :Git branch<Space>
-nnoremap <space>go :Git checkout<Space>
-nnoremap <space>gps :Dispatch! git push<CR>
-nnoremap <space>gpl :Dispatch! git pull<CR>
 
 "" indent function args in C++
 set cino+=(0
