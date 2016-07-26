@@ -22,7 +22,7 @@ Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 Bundle "honza/vim-snippets"
 Bundle 'JuliaLang/julia-vim'
-Bundle 'kien/ctrlp.vim'
+Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'pangloss/vim-javascript'
 Bundle 'lepture/vim-jinja'
@@ -40,6 +40,7 @@ Bundle 'derekwyatt/vim-scala'
 Bundle 'morhetz/gruvbox'
 Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'chase/vim-ansible-yaml'
+Bundle 'rust-lang/rust.vim'
 
 
 filetype plugin indent on
@@ -161,7 +162,14 @@ autocmd BufWritePost *.py call Flake8()
 "" indent function args in C++
 set cino+=(0
 
+"" ctrlp ignore
+let g:ctrlp_custom_ignore = {
+        \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+        \ 'file': '\v\.(class|jar|dll|formatted)$',
+        \ }
+
 au BufNewFile,BufRead *.html,*.htm,*.shtml,*.stm set ft=jinja
+au BufNewFile,BufRead *.rs set ft=rust
 au BufNewFile,BufRead *.jl set ft=julia
 au BufNewFile,BufRead *.R set ft=r
 au BufNewFile,BufRead *.pp set ft=puppet
