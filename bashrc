@@ -52,8 +52,6 @@ else
     export LSCOLORS=GxFxCxDxBxegedabagaced
 fi
 
-eval $(dircolors /usr/share/dircolors/dircolors.ansi-universal)
-
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
