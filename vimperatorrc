@@ -17,9 +17,10 @@ noremap sn tnytimes.com<CR>
 noremap sw twashingtonpost.com<CR>
 
 set hintchars=asdfghklieow
+set gui=nonavigation
 
-hi Normal -append font-size: 9pt;
-hi Hint::after -append font-size: 9pt;
+hi Normal -append font-size: 11pt;
+hi Hint::after -append font-size: 11pt;
 
 source! /home/wyatt/.vimperatorrc.local
 " vim: set ft=vimperator:

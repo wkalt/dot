@@ -16,14 +16,12 @@ Bundle 'gmarik/vundle'
 Bundle 'Vim-R-plugin'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-flake8'
-Bundle 'scrooloose/nerdtree'
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 Bundle "honza/vim-snippets"
 Bundle 'JuliaLang/julia-vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'jelera/vim-javascript-syntax'
+Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'lepture/vim-jinja'
 Bundle 'loremipsum'
@@ -36,6 +34,8 @@ Bundle "paredit.vim"
 Bundle 'ciaranm/inkpot'
 Bundle 'lervag/vim-latex'
 Bundle 'solars/github-vim'
+Bundle 'derekwyatt/vim-scala'
+
 
 filetype plugin indent on
 
@@ -45,10 +45,13 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,vendor
 nmap BB :BundleInstall<CR>
 nmap BC :BundleClean<CR>
 
+"fireplace eval
+nmap <Tab> :%Eval<CR>
+
 " paredit settings
 let g:paredit_leader = '\'
 let g:paredit_shortmaps = 1
-let g:paredit_electric_return = 1
+let g:paredit_electric_return = 2
 
 let maplocalleader = ';'
 
@@ -120,16 +123,14 @@ let g:tagbar_type_r = {
     \ ]
     \ }
 
-" " paste mode toggle
+"" paste mode toggle
 set pastetoggle=<F10>
 
-" NERDTree toggle
-nmap <F7> :NERDTreeToggle<CR>
-
 " write the current file with sudo
-cmap w!! w !sudo tee %
+cmap w!! w !sudo tee > /dev/null %
 cmap Wq wq
 
+" strip trailing whitespace fn
 fun! <SID>StripTrailingWhitespaces()
   let l = line(".")
   let c = col(".")
@@ -143,17 +144,29 @@ vmap y y']
 nnoremap <C-y> :CtrlPBuffer<CR>
 set t_Co=256
 set background=dark
-colorscheme inkpot
-"colorscheme morning
+silent! colorscheme inkpot
 
 " vim clojure indent settings for emacs compatibility
 let g:clojure_align_multiline_strings = 1
 let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let']
 
 "" call flake8 on python save
-autocmd BufWritePost *.py call Flake8()
-"au BufNewFile,BufRead *.html,*.htm,*.shtml,*.stm set ft=jinja
+"" autocmd BufWritePost *.py call Flake8()
+
+"" indent function args in C++
+set cino+=(0
+
+"" ctrlp ignore
+let g:ctrlp_custom_ignore = {
+        \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+        \ 'file': '\v\.(class|jar|dll|formatted|jpg)$',
+        \ }
+
+au BufNewFile,BufRead *.html,*.htm,*.shtml,*.stm set ft=jinja
+au BufNewFile,BufRead *.rs set ft=rust
 au BufNewFile,BufRead *.jl set ft=julia
 au BufNewFile,BufRead *.R set ft=r
 au BufNewFile,BufRead *.pp set ft=puppet
-autocmd BufWritePre *.clj,*.rb,*.py :call <SID>StripTrailingWhitespaces()
+au BufNewFile,BufRead *.scala set ft=scala
+au BufRead,BufNewFile *.md,*.markdown,*.tex setlocal fo+=t
+autocmd BufWritePre *.clj,*.rb,*.py,*.vim :call <SID>StripTrailingWhitespaces()
