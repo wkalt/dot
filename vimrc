@@ -14,6 +14,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'Vim-R-plugin'
+Bundle 'vim-scripts/HTML-AutoCloseTag'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-flake8'
 Bundle "MarcWeber/vim-addon-mw-utils"
@@ -22,6 +23,7 @@ Bundle "garbas/vim-snipmate"
 Bundle "honza/vim-snippets"
 Bundle 'JuliaLang/julia-vim'
 Bundle 'ctrlpvim/ctrlp.vim'
+Bundle 'jelera/vim-javascript-syntax'
 Bundle 'pangloss/vim-javascript'
 Bundle 'lepture/vim-jinja'
 Bundle 'loremipsum'
@@ -35,15 +37,18 @@ Bundle 'ciaranm/inkpot'
 Bundle 'lervag/vim-latex'
 Bundle 'solars/github-vim'
 Bundle 'derekwyatt/vim-scala'
-
+Bundle 'morhetz/gruvbox'
+Bundle 'hynek/vim-python-pep8-indent'
+Bundle 'chase/vim-ansible-yaml'
+Bundle 'rust-lang/rust.vim'
 
 filetype plugin indent on
 
 "ctrlp ignore settings
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,vendor
 
-nmap BB :BundleInstall<CR>
-nmap BC :BundleClean<CR>
+nmap BB :BundleInstall<CR><CR>
+nmap BC :BundleClean<CR><CR>
 
 "fireplace eval
 nmap <Tab> :%Eval<CR>

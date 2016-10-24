@@ -52,6 +52,8 @@ else
     export LSCOLORS=GxFxCxDxBxegedabagaced
 fi
 
+eval $(dircolors /home/wyatt/.dircolors)
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
