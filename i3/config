@@ -8,7 +8,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod4
+set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
@@ -174,7 +174,7 @@ bar {
     position top
     status_command i3status
     tray_output LVDS
-    font pango: Open Sans 11
+    font pango: Open Sans 10
     colors{
         background #232323
         statusline #DCDCDC

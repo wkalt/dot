@@ -6,6 +6,7 @@ pointer = 1 2 3 5 4 7 6 8 9 10 11 12
 
 keycode 176 = XF86AudioRaiseVolume
 keycode 174 = XF86AudioLowerVolume
+keycode 119 = Insert
 
 keycode 101 = XF86MonBrightnessDown
 keycode 212 = XF86MonBrightnessUp
