@@ -1,0 +1,62 @@
+URxvt*font: xft:Inconsolata:antialias=true:pixelsize=15
+URxvt*boldFont: xft:Inconsolata:antialias=true:style=bold:pixelsize=15
+URxvt*saveLines: 12000
+URxvt*scrollBar: false
+URxvt*scrollstyle: rxvt
+
+URxvt*perl-ext-common: default,matcher
+URxvt*urlLauncher: firefox
+URxvt*matcher.button: 1
+URxvt*colorUL: #86a2be
+
+URxvt*background: #000000
+URxvt*foreground: #ffffff
+
+! black dark/light
+*color0: #073642
+*color8: #002b36
+
+!! red dark/light
+*color1: #dc322f
+*color9: #cb4b16
+
+!! green dark/light
+*color2: #859900
+*color10: #586e75
+
+!! yellow dark/light
+*color3: #b58900
+*color11: #657b83
+
+!! blue dark/light
+*color4: #268bd2
+*color12: #839496
+
+!! magenta dark/light
+*color5: #d33682
+*color13: #6c71c4
+
+!! cyan dark/light
+*color6: #2aa198
+*color14: #93a1a1
+
+!! white dark/light
+*color7: #eee8d5
+*color15: #fdf6e3
+
+
+urxvt*url-launcher: /usr/bin/firefox
+
+urxvt*matcher.button: 1
+
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.iso14755:false
+
+URxvt.perl-ext-common:  default,matcher,clipboard-osc,font-size
+
+URxvt.keysym.C-Up:     font-size:increase
+URxvt.keysym.C-Down:   font-size:decrease
+URxvt.keysym.C-S-Up:   font-size:incglobal
+URxvt.keysym.C-S-Down: font-size:decglobal
+
+URxvt.letterSpace: -1
