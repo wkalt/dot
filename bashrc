@@ -54,8 +54,6 @@ else
     export LSCOLORS=GxFxCxDxBxegedabagaced
 fi
 
-eval $(dircolors /usr/share/dircolors/dircolors.ansi-universal)
-
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -137,3 +135,8 @@ export PATH=$PATH:$HOME/.rvm/bin
 
 source /home/wyatt/.rvm/scripts/rvm
 export PATH=/home/wyatt/scripts:$PATH:/home/wyatt/bin
+
+export PATH=/opt/puppetlabs/bin:$PATH
+
+# OPAM configuration
+. /home/wyatt/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true

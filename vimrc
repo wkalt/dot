@@ -41,6 +41,7 @@ Bundle 'morhetz/gruvbox'
 Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'chase/vim-ansible-yaml'
 Bundle 'rust-lang/rust.vim'
+Bundle 'rgrinberg/vim-ocaml'
 
 
 filetype plugin indent on
@@ -50,9 +51,6 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,vendor
 
 nmap BB :BundleInstall<CR><CR>
 nmap BC :BundleClean<CR><CR>
-
-"fireplace eval
-nmap <Tab> :%Eval<CR>
 
 " paredit settings
 let g:paredit_leader = '\'
@@ -65,8 +63,6 @@ let maplocalleader = ';'
 autocmd BufRead,BufNewFile *.sage,*.pyx,*.spyx set filetype=python
 autocmd Filetype python set tabstop=4|set shiftwidth=4|set expandtab
 autocmd FileType python set makeprg=sage\ -b\ &&\ sage\ -t\ %
-
-imap ii <C-[>
 
 " window switching
 nnoremap <C-j> <C-w>j
@@ -157,7 +153,7 @@ let g:clojure_align_multiline_strings = 1
 let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let']
 
 "" call flake8 on python save
-autocmd BufWritePost *.py call Flake8()
+"" autocmd BufWritePost *.py call Flake8()
 
 "" indent function args in C++
 set cino+=(0
@@ -176,3 +172,6 @@ au BufNewFile,BufRead *.pp set ft=puppet
 au BufNewFile,BufRead *.scala set ft=scala
 au BufRead,BufNewFile *.md,*.markdown,*.tex setlocal fo+=t
 autocmd BufWritePre *.clj,*.rb,*.py :call <SID>StripTrailingWhitespaces()
+
+autocmd FileType clojure nmap <buffer> <Tab> :%Eval<CR>
+autocmd FileType tex nmap <buffer> <Tab> :!pdflatex %<CR>

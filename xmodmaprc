@@ -2,13 +2,10 @@ clear Lock
 keycode 66 = Control_R
 add Control = Control_R
 
-pointer = 1 2 3 5 4 6 7 8 9 10 11 12
+keycode 119 = Insert
 
-keycode 160 = XF86AudioMute
-keycode 176 = XF86AudioRaiseVolume
-keycode 174 = XF86AudioLowerVolume
+keycode 121 = XF86AudioMute
+keycode 122 = XF86AudioLowerVolume
+keycode 123 = XF86AudioRaiseVolume
 
-keycode 101 = XF86MonBrightnessDown
-keycode 212 = XF86MonBrightnessUp
-
-keycode 204 = XF86Eject
+pointer = 1 2 3 5 4 7 6 8 9 10 11 12
