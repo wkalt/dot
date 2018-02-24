@@ -22,6 +22,7 @@ Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 Bundle "honza/vim-snippets"
 Bundle 'JuliaLang/julia-vim'
+Bundle 'jamessan/vim-gnupg'
 Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'pangloss/vim-javascript'
@@ -40,6 +41,7 @@ Bundle 'derekwyatt/vim-scala'
 Bundle 'morhetz/gruvbox'
 Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'chase/vim-ansible-yaml'
+Bundle 'fatih/vim-go'
 Bundle 'rust-lang/rust.vim'
 Bundle 'rgrinberg/vim-ocaml'
 

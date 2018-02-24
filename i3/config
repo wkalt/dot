@@ -10,7 +10,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
@@ -121,10 +121,12 @@ bindsym $mod+Shift+Tab workspace prev
 # sound keys
 bindsym XF86AudioRaiseVolume exec amixer -c 1 -q set Master 2%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -c 1 -q set Master 2%- unmute
-bindsym XF86AudioMute exec amixer -c 1 set Master toggle
+bindsym XF86AudioMute exec amixer set Master 1+ toggle
 
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+
+bindsym XF86Tools exec dm-tool lock
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
