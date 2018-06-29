@@ -10,7 +10,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod4
+set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
@@ -25,7 +25,7 @@ font pango:Inconsolata 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec /usr/bin/urxvtc
+bindsym $mod+Return exec /usr/bin/urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -63,6 +63,10 @@ bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
+
+# or the mouse keys!
+bindsym button8 move left
+bindsym button9 move right
 
 # split in horizontal orientation
 bindsym $mod+backslash split h
@@ -119,8 +123,8 @@ bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
 # sound keys
-bindsym XF86AudioRaiseVolume exec amixer -c 1 -q set Master 2%+ unmute
-bindsym XF86AudioLowerVolume exec amixer -c 1 -q set Master 2%- unmute
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 2%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 2%- unmute
 bindsym XF86AudioMute exec amixer set Master 1+ toggle
 
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
@@ -168,7 +172,7 @@ bar {
     position top
     status_command i3status
     tray_output eDP-1
-    font pango: Open Sans 10
+    font pango: Open Sans 9
     colors{
         background #232323
         statusline #DCDCDC
@@ -197,4 +201,4 @@ hide_edge_borders both
 
 focus_follows_mouse no
 exec --no-startup-id /home/wyatt/.xinitrc
-#exec --no-startup-id compton -b --config /home/wyatt/.config/compton.conf
+exec --no-startup-id /usr/bin/nm-applet

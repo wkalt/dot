@@ -56,9 +56,10 @@ else
 fi
 
 # some more ls aliases
-alias ll='ls -alF'
+alias ll='ls -alFrt'
 alias la='ls -A'
 alias l='ls -CF'
+alias sl=ls
 
 
 # Add an "alert" alias for long running commands.  Use like so:
@@ -98,3 +99,7 @@ export PATH=$GOPATH/bin:/home/wyatt/scripts:$HOME/bin:$HOME/.gem/ruby/2.2.0/bin:
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 export PATH="$HOME/.yarn/bin:$PATH"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+export PATH="$HOME/.cargo/bin:$PATH"
