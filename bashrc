@@ -93,7 +93,7 @@ fi
 
 
 export GOPATH=$HOME/go
-export PATH=$GOPATH/bin:/home/wyatt/scripts:$HOME/bin:$HOME/.gem/ruby/2.2.0/bin:$HOME/.rvm/bin:/opt/puppetlabs/bin:$PATH
+export PATH=$GOPATH/bin:/home/wyatt/scripts:$HOME/bin:$HOME/.gem/ruby/2.2.0/bin:$HOME/.rvm/bin:/opt/puppetlabs/bin:$PATH:/usr/local/go/bin
 
 #export NVM_DIR="$HOME/opt/bin/nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -103,3 +103,4 @@ export PATH="$HOME/.yarn/bin:$PATH"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 export PATH="$HOME/.cargo/bin:$PATH"
+source ~/.bash_env

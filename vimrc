@@ -164,6 +164,10 @@ autocmd BufWritePost *.py call Flake8()
 " indent function args in C++
 set cino+=(0
 
+let g:ale_linters = {
+      \ 'go': ['gopls'],
+      \}
+
 " Ale
 let b:ale_fixers = [
             \ 'remove_trailing_lines',
@@ -197,3 +201,7 @@ au BufRead,BufNewFile *.md,*.markdown,*.tex setlocal fo+=t
 
 " filetype behavior on write
 autocmd BufWritePre *.clj,*.rb,*.py :call <SID>StripTrailingWhitespaces()
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+
+let g:tex_flavor="latex"

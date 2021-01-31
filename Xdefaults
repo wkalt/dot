@@ -1,5 +1,5 @@
-URxvt*font: xft:Inconsolata:antialias=true:style=bold:pixelsize=15
-URxvt*boldFont: xft:Inconsolata:antialias=true:style=bold:pixelsize=15
+URxvt*font: xft:Inconsolata:antialias=true:style=bold:pixelsize=24
+URxvt*boldFont: xft:Inconsolata:antialias=true:style=bold:pixelsize=24
 URxvt*saveLines: 12000
 URxvt*scrollBar: false
 URxvt*scrollstyle: rxvt

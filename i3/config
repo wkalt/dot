@@ -25,7 +25,8 @@ font pango:Inconsolata 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec /usr/bin/urxvt
+bindsym $mod+Return exec /usr/bin/urxvtc
+#bindsym $mod+Return exec /usr/bin/gnome-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -171,8 +172,8 @@ bindsym $mod+r mode "resize"
 bar {
     position top
     status_command i3status
-    tray_output eDP-1
-    font pango: Open Sans 9
+    tray_output HDMI-2
+    font pango: Open Sans 14
     colors{
         background #232323
         statusline #DCDCDC
