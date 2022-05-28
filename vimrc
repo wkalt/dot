@@ -7,46 +7,20 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
-Bundle 'chase/vim-ansible-yaml'
 Bundle 'ciaranm/inkpot'
-Bundle 'derekwyatt/vim-scala'
-Bundle 'ervandew/supertab'
-Bundle 'fatih/vim-go'
-Bundle 'garbas/vim-snipmate'
-Bundle 'hashivim/vim-terraform'
-Bundle 'heavenshell/vim-jsdoc'
-Bundle 'honza/vim-snippets'
-Bundle 'hynek/vim-python-pep8-indent'
-Bundle 'jamessan/vim-gnupg'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'JuliaLang/julia-vim'
 Bundle 'junegunn/fzf'
 Bundle 'junegunn/fzf.vim'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'lepture/vim-jinja'
-Bundle 'lervag/vim-latex'
-Bundle 'loremipsum'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'morhetz/gruvbox'
-Bundle 'pangloss/vim-javascript'
-Bundle 'paredit.vim'
-Bundle 'rgrinberg/vim-ocaml'
-Bundle 'rodjek/vim-puppet'
-Bundle 'rust-lang/rust.vim'
 Bundle 'solars/github-vim'
-Bundle 'tomtom/tlib_vim'
-Bundle 'tpope/vim-classpath'
 Bundle 'tpope/vim-fireplace'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
-Bundle 'vim-flake8'
+Bundle 'hashivim/vim-terraform'
 Bundle 'Vim-R-plugin'
-Bundle 'vim-scripts/HTML-AutoCloseTag'
-Bundle 'w0rp/Ale'
+Bundle 'fatih/vim-go'
+Bundle 'vim-scripts/paredit.vim'
 
 filetype plugin indent on
 syntax on
-set wildmenu
 
 " colorscheme
 set t_Co=256
@@ -198,10 +172,10 @@ au BufNewFile,BufRead *.R set ft=r
 au BufNewFile,BufRead *.pp set ft=puppet
 au BufNewFile,BufRead *.scala set ft=scala
 au BufRead,BufNewFile *.md,*.markdown,*.tex setlocal fo+=t
+autocmd FileType terraform nmap <buffer> <Tab> :TerraformFmt<CR>
 
 " filetype behavior on write
 autocmd BufWritePre *.clj,*.rb,*.py :call <SID>StripTrailingWhitespaces()
-let g:go_def_mode='gopls'
-let g:go_info_mode='gopls'
 
 let g:tex_flavor="latex"
+let g:terraform_fmt_on_save=1
